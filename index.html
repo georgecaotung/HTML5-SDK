@@ -28,9 +28,30 @@
         </ul>
       </header>
       <section>
-        <h1>HTML5-SDK</h1>
+        <h1>JS/HTML5 SDK for LoginRadius API</h1>
 
-<p>LoginRadius JS SDK is a development kit that lets you integrate Social Login such as Facebook, Google, Twitter and over 20 more on a HTML5 website. The SDK also fetches user profile data and can be customized from your LoginRadius user account. Ex: social icon sets, login interface, provider settings, etc.</p>
+<p>Description: LoginRadius's JS SDK is a development kit that lets you integrate Social Login through providers such as Facebook, Google, Twitter, and over 20 more. The SDK also fetches user profile data and can be customized from your LoginRadius user account. Ex: social login interface, provider settings, etc.</p>
+
+<p>This SDK supports authentication as well as user profile data. To implement it on a Html5 website please follow these quick steps:</p>
+
+<ol>
+<li>Download the LoginRadius JS SDK and add it to your web project.</li>
+<li>
+<p>Add the below script under body section of the page and login from social login. After successful authentication, you will get user profile data of the user.</p>
+
+<pre><code>    &lt;script type="text/javascript"&gt;
+        LoginRadiusSDK.onlogin = Successfullylogin;
+
+        function Successfullylogin() {
+            LoginRadiusSDK.getUserprofile(function (data) {
+                document.getElementById("profile").innerHTML = JSON.stringify(data);
+            });
+            return false;
+        };    
+    &lt;/script&gt;
+</code></pre>
+</li>
+</ol>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/LoginRadius">LoginRadius</a></p>
